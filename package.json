@@ -1,0 +1,21 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stack-array.js",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "Alisson Vargas",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.4"
+  }
+}

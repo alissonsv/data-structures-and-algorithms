@@ -1,4 +1,4 @@
-import Stack from '../stack';
+import Stack from '../data-structures/stack';
 
 export function decimalToBinary(decNumber: number) {
   const remStack = new Stack<number>();

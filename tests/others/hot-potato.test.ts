@@ -1,4 +1,4 @@
-import { hotPotato } from '../../../data-structures/others/hot-potato';
+import { hotPotato } from '../../src/others/hot-potato';
 
 describe('Hot Potato', () => {
   test('should return the winner', () => {

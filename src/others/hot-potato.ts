@@ -1,4 +1,4 @@
-import Queue from '../queue';
+import Queue from '../data-structures/queue';
 
 export function hotPotato(elementsList: any[], num: number) {
   const queue = new Queue();

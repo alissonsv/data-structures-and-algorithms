@@ -25,28 +25,34 @@ export default class Deque<T> {
     this.count++;
   }
 
-  removeFront() {
+  removeFront():T {
+    const result = this.items[0];
     for (let i = 0; i < this.count; i++) {
       this.items[i] = this.items[i + 1];
     }
 
     this.count--;
+    return result;
   }
 
-  removeBack() {
+  removeBack():T {
+    const result = this.items[this.count];
+
     this.items[this.count] = undefined;
     this.count--;
+
+    return result;
   }
 
-  peekFront() {
+  peekFront():T {
     return this.items[0];
   }
 
-  peekBack() {
+  peekBack():T {
     return this.items[this.count - 1];
   }
 
-  isEmpty() {
+  isEmpty():boolean {
     return this.count === 0;
   }
 
@@ -55,11 +61,11 @@ export default class Deque<T> {
     this.count = 0;
   }
 
-  size() {
+  size():number {
     return this.count;
   }
 
-  toString() {
+  toString():string {
     if (this.isEmpty()) {
       return '';
     }

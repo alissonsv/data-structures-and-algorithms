@@ -36,9 +36,9 @@ export default class Deque<T> {
   }
 
   removeBack():T {
-    const result = this.items[this.count];
+    const result = this.items[this.count - 1];
 
-    this.items[this.count] = undefined;
+    this.items[this.count - 1] = undefined;
     this.count--;
 
     return result;

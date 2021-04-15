@@ -1,4 +1,4 @@
-import { hotPotato } from '../../src/others/hot-potato';
+import { hotPotato } from '../../src/others/hotPotato';
 
 describe('Hot Potato', () => {
   test('should return the winner', () => {

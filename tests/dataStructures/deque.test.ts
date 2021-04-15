@@ -1,4 +1,4 @@
-import Deque from '../../src/data-structures/deque';
+import Deque from '../../src/dataStructures/deque';
 
 describe('Deque', () => {
   let deque: Deque<number>;

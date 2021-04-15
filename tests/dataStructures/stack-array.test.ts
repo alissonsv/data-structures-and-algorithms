@@ -1,4 +1,4 @@
-import Stack from '../../src/data-structures/stack-array';
+import Stack from '../../src/dataStructures/stackArray';
 
 
 describe('Stack array', () => {

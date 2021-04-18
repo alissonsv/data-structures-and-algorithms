@@ -2,9 +2,9 @@ import { defaultEquals } from '../util';
 import { Node } from './models/linkedListModels';
 
 export default class LinkedList<T> {
-  private count: number;
-  private head: Node<T>;
-  private equalsFn: <T>(a:T, b:T) => boolean;
+  protected count: number;
+  protected head: Node<T>;
+  protected equalsFn: <T>(a:T, b:T) => boolean;
 
   constructor(equalsFn = defaultEquals) {
     this.count = 0;
@@ -13,7 +13,7 @@ export default class LinkedList<T> {
   }
 
   push(element: T): void {
-    const node = new Node(element, undefined);
+    const node = new Node(element);
     
     if(this.head == null) {
       this.head = node;
@@ -61,7 +61,7 @@ export default class LinkedList<T> {
 
   insert(element: T, index: number): boolean {
     if (index >= 0 && index <= this.count) {
-      const node = new Node(element, undefined);
+      const node = new Node(element);
       
       if (index === 0) {
         const current = this.head;

@@ -13,7 +13,7 @@ export default class LinkedList<T> {
   }
 
   push(element: T): void {
-    const node = new Node(element);
+    const node = new Node(element, undefined);
     
     if(this.head == null) {
       this.head = node;
@@ -61,7 +61,7 @@ export default class LinkedList<T> {
 
   insert(element: T, index: number): boolean {
     if (index >= 0 && index <= this.count) {
-      const node = new Node(element);
+      const node = new Node(element, undefined);
       
       if (index === 0) {
         const current = this.head;

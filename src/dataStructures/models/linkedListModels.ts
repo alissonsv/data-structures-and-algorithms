@@ -7,3 +7,13 @@ export class Node<T> {
     this.next = next;
   }
 }
+
+export class DoublyNode<T> extends Node<T> {
+  public prev?: DoublyNode<T>;
+  public next?: DoublyNode<T>;
+
+  constructor(element: T, next?: DoublyNode<T>, prev?: DoublyNode<T>) {
+    super(element, next);
+    this.prev = prev;
+  }
+}

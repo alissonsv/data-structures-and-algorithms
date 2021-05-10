@@ -27,7 +27,7 @@ export default class StackLinkedList<T> {
   }
 
   peek(): T {
-    return this.items.getTail().element;
+    return this.items.getTail()?.element;
   }
 
   clear(): void {

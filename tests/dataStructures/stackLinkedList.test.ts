@@ -50,6 +50,7 @@ describe('Stack Linked List', () => {
   });
 
   it('peek the last element of the list', () => {
+    expect(list.peek()).toBeUndefined();
     insertElements();
     expect(list.peek()).toBe(3);
   });

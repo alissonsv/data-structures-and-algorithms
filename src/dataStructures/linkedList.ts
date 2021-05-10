@@ -94,6 +94,11 @@ export default class LinkedList<T> {
     return this.removeAt(index);
   }
 
+  clear(): void {
+    this.count = 0;
+    this.head = undefined;
+  }
+
   size(): number {
     return this.count;
   }

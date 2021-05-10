@@ -84,6 +84,11 @@ export default class DoubleLinkedList<T> extends LinkedList<T> {
     return undefined;
   }
 
+  clear(): void {
+    super.clear();
+    this.tail = undefined;
+  }
+
   getTail(): DoublyNode<T> {
     return this.tail;
   }

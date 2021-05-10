@@ -101,6 +101,18 @@ describe('Doubly Linked List', () => {
     });
   });
 
+  describe('Clear List', () => {
+    it('cleans the list and return void', () => {
+      list.push(1);
+      list.push(2);
+      expect(list.size()).toBe(2);
+      list.clear();
+      expect(list.size()).toBe(0);
+      expect(list.getHead()).toBeUndefined();
+      expect(list.getTail()).toBeUndefined();
+    })
+  })
+
   describe('Get element', () => {
     it('Return a node at given index', () => {
       list.push(1);

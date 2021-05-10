@@ -75,6 +75,17 @@ describe('Linked List', () => {
     });
   });
 
+  describe('Clear list', () => {
+    it('clear the list and return void', () => {
+      list.push(1);
+      list.push(2);
+      expect(list.size()).toBe(2);
+      list.clear();
+      expect(list.size()).toBe(0);
+      expect(list.getHead()).toBeUndefined();
+    })
+  })
+
   describe('Get element', () => {
     it('Return a node at given index', () => {
       list.push(1);

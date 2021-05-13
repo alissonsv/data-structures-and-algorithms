@@ -1,6 +1,6 @@
 import Queue from '../dataStructures/queue';
 
-export function hotPotato(elementsList: any[], num: number) {
+export default function hotPotato(elementsList: any[], num: number) {
   const queue = new Queue();
   const elimitatedList = [];
 
@@ -17,6 +17,6 @@ export function hotPotato(elementsList: any[], num: number) {
 
   return {
     elimitated: elimitatedList,
-    winner: queue.dequeue()
+    winner: queue.dequeue(),
   };
 }

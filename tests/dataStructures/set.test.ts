@@ -47,7 +47,7 @@ describe('Set', () => {
     set.add(1);
     expect(set.values()).toStrictEqual([1]);
     set.add(2);
-    expect(set.values()).toStrictEqual([1,2]);
+    expect(set.values()).toStrictEqual([1, 2]);
   });
 
   it('union two sets', () => {
@@ -63,7 +63,7 @@ describe('Set', () => {
 
     const unionAB = setA.union(setB);
     expect(unionAB.size()).toBe(6);
-    expect(unionAB.values()).toStrictEqual([1,2,3,4,5,6]);
+    expect(unionAB.values()).toStrictEqual([1, 2, 3, 4, 5, 6]);
   });
 
   it('intersects two sets', () => {
@@ -78,7 +78,7 @@ describe('Set', () => {
     setB.add(5);
 
     const intersectionAB = setA.intersection(setB);
-    expect(intersectionAB.values()).toStrictEqual([2,3]);
+    expect(intersectionAB.values()).toStrictEqual([2, 3]);
   });
 
   it('difference between two sets', () => {
@@ -107,7 +107,7 @@ describe('Set', () => {
     setC.add(2);
     setC.add(3);
     setC.add(4);
-    
+
     expect(setA.isSubsetOf(setB)).toBeTruthy();
     expect(setA.isSubsetOf(setC)).toBeFalsy();
     expect(setC.isSubsetOf(setA)).toBeFalsy();

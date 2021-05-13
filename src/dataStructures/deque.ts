@@ -1,12 +1,12 @@
 export default class Deque<T> {
   private count: number;
+
   private items: object;
 
   constructor() {
     this.count = 0;
     this.items = {};
   }
-
 
   addFront(element: T) {
     if (this.isEmpty()) {

@@ -2,7 +2,7 @@ import Queue from '../../src/dataStructures/queue';
 
 describe('Queue', () => {
   let queue: Queue<number>;
-  
+
   beforeEach(() => {
     queue = new Queue();
   });
@@ -20,7 +20,7 @@ describe('Queue', () => {
     queue.enqueue(1);
     queue.enqueue(2);
     queue.enqueue(3);
-    
+
     expect(queue.dequeue()).toBe(1);
     expect(queue.dequeue()).toBe(2);
     expect(queue.dequeue()).toBe(3);
@@ -47,7 +47,7 @@ describe('Queue', () => {
     queue.enqueue(1);
     queue.enqueue(2);
     expect(queue.size()).toBe(2);
-  })
+  });
 
   test('should clear queue after add some numbers', () => {
     queue.enqueue(1);
@@ -65,5 +65,5 @@ describe('Queue', () => {
     queue.enqueue(1);
     queue.enqueue(2);
     expect(queue.toString()).toBe('1, 2');
-  })
-})
+  });
+});

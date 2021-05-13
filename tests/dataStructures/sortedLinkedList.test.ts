@@ -29,12 +29,12 @@ describe('Sorted Linked List', () => {
     it('add element at index 0 when there is no elements using push', () => {
       list.push(99);
       expect(list.size()).toBe(1);
-    })
+    });
 
     it('add element at the middle of the list using "push"', () => {
       insertElements();
       list.push(2);
       expect(list.toString()).toBe('1, 2, 2, 3');
-    })
-  })
-})
+    });
+  });
+});

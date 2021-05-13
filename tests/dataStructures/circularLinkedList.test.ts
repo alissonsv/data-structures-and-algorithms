@@ -7,7 +7,7 @@ describe('Circular Linked List', () => {
     list = new CircularLinkedList<number>();
   });
 
-  function insertElements(list: CircularLinkedList<number>) {
+  function insertElements() {
     list.push(0);
     list.push(1);
     list.push(2);
@@ -24,7 +24,7 @@ describe('Circular Linked List', () => {
       list.insert(1, 0);
       list.insert(2, 0);
       expect(list.size()).toBe(2);
-    })
+    });
 
     it('add element at nth index', () => {
       list.insert(1, 0);
@@ -33,20 +33,20 @@ describe('Circular Linked List', () => {
 
       const result = list.insert(35, 1);
       expect(result).toBeTruthy();
-      expect(list.size()).toBe(3);      
-      
+      expect(list.size()).toBe(3);
+
       expect(list.toString()).toBe('1, 35, 2');
     });
 
     it('add element at index 0 when there is no elements', () => {
-      list.insert(1,0);
+      list.insert(1, 0);
       expect(list.size()).toBe(1);
     });
 
     it('add element at index 0 when there is one or more elements', () => {
-      list.insert(1,0);
+      list.insert(1, 0);
       expect(list.size()).toBe(1);
-      list.insert(2,0);
+      list.insert(2, 0);
       expect(list.size()).toBe(2);
       list.insert(3, 0);
       expect(list.size()).toBe(3);
@@ -70,8 +70,8 @@ describe('Circular Linked List', () => {
 
   describe('Remove elements', () => {
     it('return undefined if index is < 0 or greater than count', () => {
-      insertElements(list);
-      
+      insertElements();
+
       expect(list.removeAt(-1)).toBeUndefined();
       expect(list.removeAt(4)).toBeUndefined();
     });
@@ -83,20 +83,20 @@ describe('Circular Linked List', () => {
     });
 
     it('remove node at index 0 with more than one node', () => {
-      insertElements(list);
+      insertElements();
       expect(list.removeAt(0)).toBe(0);
       expect(list.size()).toBe(2);
     });
 
     it('remove node from the middle of the list', () => {
-      insertElements(list);
+      insertElements();
 
       expect(list.removeAt(1)).toBe(1);
       expect(list.size()).toBe(2);
     });
 
     it('remove node at the end of the list', () => {
-      insertElements(list);
+      insertElements();
 
       expect(list.removeAt(2)).toBe(2);
       expect(list.size()).toBe(2);

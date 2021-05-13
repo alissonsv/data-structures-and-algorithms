@@ -8,9 +8,9 @@ export default class CircularLinkedList<T> extends LinkedList<T> {
   }
 
   insert(element: T, index: number): boolean {
-    if(index >= 0 && index <= this.count) {
+    if (index >= 0 && index <= this.count) {
       const node = new Node(element);
-      
+
       if (index === 0) {
         if (this.head == null) {
           this.head = node;
@@ -38,10 +38,10 @@ export default class CircularLinkedList<T> extends LinkedList<T> {
     if (this.size() === 0) {
       this.head = node;
     } else {
-      const lastNode = this.getElementAt(this.size() -1);
+      const lastNode = this.getElementAt(this.size() - 1);
       lastNode.next = node;
     }
-    
+
     node.next = this.head;
     this.count++;
   }
@@ -55,7 +55,7 @@ export default class CircularLinkedList<T> extends LinkedList<T> {
           this.head = undefined;
         } else {
           const removed = this.head;
-          current = this.getElementAt(this.size() - 1); //last node
+          current = this.getElementAt(this.size() - 1); // last node
           this.head = this.head.next;
           current.next = this.head;
           current = removed;

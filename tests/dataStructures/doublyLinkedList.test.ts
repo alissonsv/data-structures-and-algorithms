@@ -37,10 +37,10 @@ describe('Doubly Linked List', () => {
     });
 
     it('add elements at last index', () => {
-      expect(list.insert(1,0)).toBeTruthy();
-      expect(list.insert(2,1)).toBeTruthy();
-      expect(list.insert(3,2)).toBeTruthy();
-      expect(list.insert(4,3)).toBeTruthy();
+      expect(list.insert(1, 0)).toBeTruthy();
+      expect(list.insert(2, 1)).toBeTruthy();
+      expect(list.insert(3, 2)).toBeTruthy();
+      expect(list.insert(4, 3)).toBeTruthy();
       expect(list.size()).toBe(4);
     });
 
@@ -110,8 +110,8 @@ describe('Doubly Linked List', () => {
       expect(list.size()).toBe(0);
       expect(list.getHead()).toBeUndefined();
       expect(list.getTail()).toBeUndefined();
-    })
-  })
+    });
+  });
 
   describe('Get element', () => {
     it('Return a node at given index', () => {
@@ -157,7 +157,7 @@ describe('Doubly Linked List', () => {
       const node = list.getTail();
       expect(node).toBeInstanceOf(DoublyNode);
       expect(node.element).toBe(3);
-    })
+    });
   });
 
   describe('Get list to string', () => {
@@ -178,7 +178,7 @@ describe('Doubly Linked List', () => {
       list.push(1);
       list.push(2);
       list.push(3);
-  
+
       expect(list.inverseToString()).toBe('3, 2, 1');
     });
   });

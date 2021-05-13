@@ -1,5 +1,6 @@
-export default class Queue<T>{
+export default class Queue<T> {
   private count: number;
+
   private items: object;
 
   constructor() {
@@ -8,7 +9,7 @@ export default class Queue<T>{
   }
 
   enqueue(element: T) {
-    this.items[this.count] = element;;
+    this.items[this.count] = element;
     this.count++;
   }
 

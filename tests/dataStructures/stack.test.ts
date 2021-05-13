@@ -9,7 +9,7 @@ describe('Stack class', () => {
 
   test('should return true if empty', () => {
     expect(stack.isEmpty()).toBe(true);
-  })
+  });
 
   test('should push two elements and get size', () => {
     stack.push(5);
@@ -32,7 +32,7 @@ describe('Stack class', () => {
     expect(stack.peek()).toBeUndefined();
 
     stack.push(4);
-    stack.push(5)
+    stack.push(5);
     expect(stack.peek()).toBe(5);
   });
 
@@ -53,5 +53,4 @@ describe('Stack class', () => {
 
     expect(stack.toString()).toBe('1, 2');
   });
-
-})
+});

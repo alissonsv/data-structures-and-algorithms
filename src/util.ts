@@ -1,7 +1,7 @@
 export enum Compare {
   LESS_THAN = -1,
   BIGGER_THAN = 1,
-};
+}
 
 export function defaultEquals<T>(a:T, b:T): boolean {
   return a === b;

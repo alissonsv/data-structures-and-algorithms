@@ -7,12 +7,12 @@ describe('Linked List', () => {
   beforeEach(() => {
     list = new LinkedList<number>();
   });
-  
+
   describe('Add elements', () => {
     it('add two elements and get its size', () => {
       expect(list.isEmpty()).toBeTruthy();
       expect(list.size()).toBe(0);
-  
+
       list.push(1);
       expect(list.size()).toBe(1);
       list.push(2);
@@ -26,13 +26,13 @@ describe('Linked List', () => {
 
       const result = list.insert(35, 1);
       expect(result).toBeTruthy();
-      expect(list.size()).toBe(3);      
+      expect(list.size()).toBe(3);
     });
 
     it('add element at index 0', () => {
-      list.insert(1,0);
+      list.insert(1, 0);
       expect(list.size()).toBe(1);
-      list.insert(0,0);
+      list.insert(0, 0);
       expect(list.size()).toBe(2);
     });
 
@@ -83,8 +83,8 @@ describe('Linked List', () => {
       list.clear();
       expect(list.size()).toBe(0);
       expect(list.getHead()).toBeUndefined();
-    })
-  })
+    });
+  });
 
   describe('Get element', () => {
     it('Return a node at given index', () => {

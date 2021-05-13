@@ -1,4 +1,4 @@
-export default class Stack<T>{
+export default class Stack<T> {
   private items: T[];
 
   constructor() {

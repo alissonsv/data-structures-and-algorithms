@@ -5,7 +5,7 @@ describe('decimalToBinary', () => {
     expect(decimalToBinary(233)).toBe('11101001');
     expect(decimalToBinary(10)).toBe('1010');
     expect(decimalToBinary(1000)).toBe('1111101000');
-  })
+  });
 });
 
 describe('baseConverter', () => {
@@ -20,4 +20,4 @@ describe('baseConverter', () => {
     expect(baseConverter(5142, 1)).toBe('');
     expect(baseConverter(6523, 40)).toBe('');
   });
-})
+});

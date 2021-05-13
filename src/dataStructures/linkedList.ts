@@ -3,8 +3,10 @@ import { Node } from './models/linkedListModels';
 
 export default class LinkedList<T> {
   protected count: number;
+
   protected head: Node<T>;
-  protected equalsFn: <T>(a:T, b:T) => boolean;
+
+  protected equalsFn: (a:T, b:T) => boolean;
 
   constructor(equalsFn = defaultEquals) {
     this.count = 0;
@@ -14,8 +16,8 @@ export default class LinkedList<T> {
 
   push(element: T): void {
     const node = new Node(element);
-    
-    if(this.head == null) {
+
+    if (this.head == null) {
       this.head = node;
     } else {
       let current = this.head;
@@ -29,13 +31,13 @@ export default class LinkedList<T> {
   }
 
   removeAt(index: number): T {
-    if(index >= 0 && index < this.count) {
+    if (index >= 0 && index < this.count) {
       let current = this.head;
 
-      if(index === 0) {
+      if (index === 0) {
         this.head = current.next;
       } else {
-        let previous = this.getElementAt(index - 1);
+        const previous = this.getElementAt(index - 1);
         current = previous.next;
         previous.next = current.next;
       }
@@ -46,10 +48,10 @@ export default class LinkedList<T> {
   }
 
   getElementAt(index: number): Node<T> {
-    if(index >= 0 && index < this.count && index != null) {
+    if (index >= 0 && index < this.count && index != null) {
       let current = this.head;
 
-      for (let i = 0; i < index && current != null; i++){
+      for (let i = 0; i < index && current != null; i++) {
         current = current.next;
       }
 
@@ -62,7 +64,7 @@ export default class LinkedList<T> {
   insert(element: T, index: number): boolean {
     if (index >= 0 && index <= this.count) {
       const node = new Node(element);
-      
+
       if (index === 0) {
         const current = this.head;
         node.next = current;
@@ -81,7 +83,7 @@ export default class LinkedList<T> {
   indexOf(element: T): number {
     let current = this.head;
     for (let i = 0; i < this.count && current != null; i++) {
-      if(this.equalsFn(element, current.element)){
+      if (this.equalsFn(element, current.element)) {
         return i;
       }
       current = current.next;
@@ -89,7 +91,7 @@ export default class LinkedList<T> {
     return -1;
   }
 
-  remove(element: T): T{
+  remove(element: T): T {
     const index = this.indexOf(element);
     return this.removeAt(index);
   }
@@ -117,7 +119,7 @@ export default class LinkedList<T> {
     }
     let objString = `${this.head.element}`;
     let current = this.head.next;
-    for(let i = 1; i < this.size() && current != null; i++) {
+    for (let i = 1; i < this.size() && current != null; i++) {
       objString = `${objString}, ${current.element}`;
       current = current.next;
     }

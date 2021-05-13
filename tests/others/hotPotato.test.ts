@@ -1,4 +1,4 @@
-import { hotPotato } from '../../src/others/hotPotato';
+import hotPotato from '../../src/others/hotPotato';
 
 describe('Hot Potato', () => {
   test('should return the winner', () => {
@@ -8,5 +8,5 @@ describe('Hot Potato', () => {
     expect(hotPotato(names, 8).winner).toBe('Jack');
     expect(hotPotato(names, 9).winner).toBe('Ingrid');
     expect(hotPotato(names, 10).winner).toBe('Carl');
-  })
-})
+  });
+});

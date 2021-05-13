@@ -2,7 +2,7 @@ import StackLinkedList from '../../src/dataStructures/stackLinkedList';
 
 describe('Stack Linked List', () => {
   let list: StackLinkedList<number>;
-  
+
   function insertElements() {
     list.push(1);
     list.push(2);
@@ -26,16 +26,15 @@ describe('Stack Linked List', () => {
     it('pop the last element from the list', () => {
       insertElements();
       expect(list.size()).toBe(3);
-      
+
       expect(list.pop()).toBe(3);
       expect(list.size()).toBe(2);
     });
 
     it('return undefined if the list is empty', () => {
-      expect(list.pop()).toBeUndefined()
+      expect(list.pop()).toBeUndefined();
     });
   });
-
 
   it('returns the size of the list', () => {
     expect(list.size()).toBe(0);

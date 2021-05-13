@@ -4,6 +4,7 @@ import { defaultEquals } from '../util';
 
 export default class DoubleLinkedList<T> extends LinkedList<T> {
   protected head: DoublyNode<T>;
+
   protected tail: DoublyNode<T>;
 
   constructor(equalsFn = defaultEquals) {
@@ -13,8 +14,8 @@ export default class DoubleLinkedList<T> extends LinkedList<T> {
 
   push(element: T): void {
     const node = new DoublyNode(element);
-    
-    if (this.head == null){
+
+    if (this.head == null) {
       this.head = node;
       this.tail = node;
     } else {
@@ -30,8 +31,8 @@ export default class DoubleLinkedList<T> extends LinkedList<T> {
       const node = new DoublyNode(element);
       let current = this.head;
 
-      if (index === 0) {  // First node
-        if(this.head == null) {
+      if (index === 0) { // First node
+        if (this.head == null) {
           this.head = node;
           this.tail = node;
         } else {
@@ -39,7 +40,7 @@ export default class DoubleLinkedList<T> extends LinkedList<T> {
           this.head.prev = node;
           this.head = node;
         }
-      } else if (index === this.count){ // Last node
+      } else if (index === this.count) { // Last node
         node.prev = this.tail;
         this.tail.next = node;
         this.tail = node;
@@ -58,10 +59,10 @@ export default class DoubleLinkedList<T> extends LinkedList<T> {
   }
 
   removeAt(index: number): T {
-    if(index >= 0 && index < this.count) {
+    if (index >= 0 && index < this.count) {
       let current = this.head;
 
-      if(index === 0) { // First node
+      if (index === 0) { // First node
         this.head = current.next;
         if (this.count === 1) {
           this.tail = undefined;
@@ -94,13 +95,13 @@ export default class DoubleLinkedList<T> extends LinkedList<T> {
   }
 
   inverseToString(): string {
-    if (this.size() === 0){
+    if (this.size() === 0) {
       return '';
     }
     let objString = `${this.tail.element}`;
     let previous = this.tail.prev;
-    
-    while(previous != null) {
+
+    while (previous != null) {
       objString = `${objString}, ${previous.element}`;
       previous = previous.prev;
     }

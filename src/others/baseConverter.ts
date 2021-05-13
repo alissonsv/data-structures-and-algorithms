@@ -6,13 +6,13 @@ export function decimalToBinary(decNumber: number) {
   let remainder: number;
   let binaryString = '';
 
-  while(number > 0) {
+  while (number > 0) {
     remainder = Math.floor(number % 2);
     remStack.push(remainder);
     number = Math.floor(number / 2);
   }
 
-  while(!remStack.isEmpty()){
+  while (!remStack.isEmpty()) {
     binaryString += remStack.pop().toString();
   }
 
@@ -21,22 +21,22 @@ export function decimalToBinary(decNumber: number) {
 
 export function baseConverter(decNumber: number, base: number) {
   const remStack = new Stack<number>();
-  const digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  const digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   let number = decNumber;
   let remainder: number;
   let baseString = '';
-  
-  if(!(base >= 2 && base <= 36)){
+
+  if (!(base >= 2 && base <= 36)) {
     return '';
   }
 
-  while(number > 0) {
+  while (number > 0) {
     remainder = Math.floor(number % base);
     remStack.push(remainder);
     number = Math.floor(number / base);
   }
 
-  while(!remStack.isEmpty()) {
+  while (!remStack.isEmpty()) {
     baseString += digits[remStack.pop()];
   }
 

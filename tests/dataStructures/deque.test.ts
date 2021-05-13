@@ -12,7 +12,7 @@ describe('Deque', () => {
       deque.addFront(1);
       expect(deque.size()).toBe(1);
     });
-  
+
     it('add an element at back and get its size', () => {
       deque.addBack(1);
       expect(deque.size()).toBe(1);
@@ -27,7 +27,7 @@ describe('Deque', () => {
       deque.removeFront();
       expect(deque.size()).toBe(1);
     });
-  
+
     test('add two elements and remove from the back', () => {
       deque.addBack(1);
       deque.addBack(2);
@@ -59,7 +59,7 @@ describe('Deque', () => {
       deque.addFront(2);
       expect(deque.peekFront()).toBe(2);
     });
-  
+
     test('add two elements and get the element at back', () => {
       deque.addFront(1);
       deque.addFront(2);
@@ -71,7 +71,7 @@ describe('Deque', () => {
     test('return true if deque is empty', () => {
       expect(deque.isEmpty()).toBeTruthy();
     });
-  
+
     test('add two elements and clear the deque', () => {
       deque.addFront(1);
       deque.addFront(2);
@@ -94,9 +94,9 @@ describe('Deque', () => {
       deque.addFront(2);
       expect(deque.toString()).toBe('2, 1');
     });
-  
+
     test('return an empty string if deque is empty', () => {
       expect(deque.toString()).toBe('');
     });
   });
-})
+});

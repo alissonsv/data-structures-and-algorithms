@@ -1,5 +1,6 @@
 export default class Stack<T> {
   private count: number = 0;
+
   private items: any = {};
 
   push(element:T) {

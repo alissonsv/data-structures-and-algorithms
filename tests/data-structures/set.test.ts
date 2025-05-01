@@ -1,4 +1,4 @@
-import Set from '../../src/dataStructures/set';
+import Set from '../../src/data-structures/set';
 
 describe('Set', () => {
   let set: Set<number>;

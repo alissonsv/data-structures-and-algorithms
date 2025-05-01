@@ -1,4 +1,4 @@
-import palindromeChecker from '../../src/others/palindromeChecker';
+import palindromeChecker from '../../src/others/palindrome-checker';
 
 describe('Palindrome Checker', () => {
   test('Check if the word is a palindrome', () => {

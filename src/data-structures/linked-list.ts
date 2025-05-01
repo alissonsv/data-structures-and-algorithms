@@ -1,5 +1,5 @@
 import { defaultEquals } from '../util';
-import { Node } from './models/linkedListModels';
+import { Node } from './models/linked-list-models';
 
 export default class LinkedList<T> {
   protected count: number;

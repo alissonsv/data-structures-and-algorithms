@@ -1,4 +1,4 @@
-import SortedLinkedList from '../../src/dataStructures/sortedLinkedList';
+import SortedLinkedList from '../../src/data-structures/sorted-linked-list';
 
 let list: SortedLinkedList<number>;
 

@@ -1,5 +1,5 @@
-import LinkedList from '../../src/dataStructures/linkedList';
-import { Node } from '../../src/dataStructures/models/linkedListModels';
+import LinkedList from '../../src/data-structures/linked-list';
+import { Node } from '../../src/data-structures/models/linked-list-models';
 
 describe('Linked List', () => {
   let list: LinkedList<number>;

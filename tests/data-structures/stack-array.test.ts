@@ -1,4 +1,4 @@
-import Stack from '../../src/dataStructures/stackArray';
+import Stack from '../../src/data-structures/stack-array';
 
 describe('Stack array', () => {
   let stack: Stack<number>;

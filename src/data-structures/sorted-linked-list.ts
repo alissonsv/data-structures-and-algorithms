@@ -1,5 +1,5 @@
 import { defaultEquals, defaultCompare, Compare } from '../util';
-import LinkedList from './linkedList';
+import LinkedList from './linked-list';
 
 export default class SortedLinkedList<T> extends LinkedList<T> {
   protected compareFn: (a: T, b: T) => number;

@@ -1,4 +1,4 @@
-import { decimalToBinary, baseConverter } from '../../src/others/baseConverter';
+import { decimalToBinary, baseConverter } from '../../src/others/base-converter';
 
 describe('decimalToBinary', () => {
   test('Should return binary string of number', () => {

@@ -5,8 +5,8 @@ export default class Stack<T> {
     this.items = [];
   }
 
-  push(element: T) {
-    this.items.push(element);
+  push(...elements: T[]) {
+    this.items.push(...elements);
   }
 
   pop() {

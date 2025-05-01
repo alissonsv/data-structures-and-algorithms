@@ -27,6 +27,13 @@ describe('Stack array', () => {
     expect(stack.isEmpty()).toBe(false);
   });
 
+  test('Should allow add more than one element at once', () => {
+    stack.push(1,2,3)
+
+    expect(stack.size()).toBe(3)
+    expect(stack.isEmpty()).toBe(false);
+  })
+
   test('add then remove element and return right size', () => {
     stack.push(5);
     stack.push(10);

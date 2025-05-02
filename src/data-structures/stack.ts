@@ -1,7 +1,7 @@
 export default class Stack<T> {
   private count: number = 0;
 
-  private items: any = {};
+  private items = {};
 
   push(element:T) {
     this.items[this.count] = element;

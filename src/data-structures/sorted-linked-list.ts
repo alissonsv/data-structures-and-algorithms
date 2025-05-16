@@ -18,11 +18,11 @@ export default class SortedLinkedList<T> extends LinkedList<T> {
     }
   }
 
-  insert(element: T): boolean {
+  insert(element: T, index = 0): boolean {
     if (this.isEmpty()) {
       return super.insert(element, 0);
     }
-    const index = this.getIndexNextSortedElement(element);
+    index = this.getIndexNextSortedElement(element);
     return super.insert(element, index);
   }
 

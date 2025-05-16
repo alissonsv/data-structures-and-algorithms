@@ -17,11 +17,11 @@ export default class LinkedList<T> {
   push(element: T): void {
     const node = new Node(element);
 
-    if (this.head == null) {
+    if (this.head === undefined) {
       this.head = node;
     } else {
       let current = this.head;
-      while (current.next != null) {
+      while (current.next !== undefined) {
         current = current.next;
       }
       current.next = node;
@@ -51,7 +51,7 @@ export default class LinkedList<T> {
     if (index >= 0 && index < this.count && index != null) {
       let current = this.head;
 
-      for (let i = 0; i < index && current != null; i++) {
+      for (let i = 0; i < index; i++) {
         current = current.next;
       }
 
@@ -62,27 +62,31 @@ export default class LinkedList<T> {
   }
 
   insert(element: T, index: number): boolean {
-    if (index >= 0 && index <= this.count) {
-      const node = new Node(element);
-
-      if (index === 0) {
-        const current = this.head;
-        node.next = current;
-        this.head = node;
-      } else {
-        const previous = this.getElementAt(index - 1);
-        node.next = previous.next;
-        previous.next = node;
-      }
-      this.count++;
-      return true;
+    if (index < 0 || index > this.count) {
+      return false
     }
-    return false;
+
+    const node = new Node(element);
+
+    if (index === 0) {
+      const current = this.head;
+      node.next = current;
+      this.head = node;
+    } else {
+      const previous = this.getElementAt(index - 1);
+      const current = previous.next;
+
+      node.next = current;
+      previous.next = node;
+    }
+    
+    this.count++;
+    return true;
   }
 
   indexOf(element: T): number {
     let current = this.head;
-    for (let i = 0; i < this.count && current != null; i++) {
+    for (let i = 0; i < this.count && current !== undefined; i++) {
       if (this.equalsFn(element, current.element)) {
         return i;
       }
@@ -114,12 +118,12 @@ export default class LinkedList<T> {
   }
 
   toString(): string {
-    if (this.head == null) {
+    if (this.head === undefined) {
       return '';
     }
     let objString = `${this.head.element}`;
     let current = this.head.next;
-    for (let i = 1; i < this.size() && current != null; i++) {
+    for (let i = 1; i < this.size() && current !== undefined; i++) {
       objString = `${objString}, ${current.element}`;
       current = current.next;
     }

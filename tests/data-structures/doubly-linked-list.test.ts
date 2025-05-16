@@ -138,7 +138,7 @@ describe('Doubly Linked List', () => {
       list.push(1);
       expect(list.getElementAt(-1)).toBeUndefined();
       expect(list.getElementAt(2)).toBeUndefined();
-      expect(list.getElementAt(null)).toBeUndefined();
+      expect(list.getElementAt(undefined)).toBeUndefined();
     });
 
     it('get the node at head', () => {

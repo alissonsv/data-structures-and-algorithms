@@ -27,62 +27,65 @@ export default class DoubleLinkedList<T> extends LinkedList<T> {
   }
 
   insert(element: T, index: number): boolean {
-    if (index >= 0 && index <= this.count) {
-      const node = new DoublyNode(element);
-      let current = this.head;
+    if (index < 0 || index > this.count) {
+      return false;
+    }
 
-      if (index === 0) { // First node
-        if (this.head == null) {
-          this.head = node;
-          this.tail = node;
-        } else {
-          node.next = this.head;
-          this.head.prev = node;
-          this.head = node;
-        }
-      } else if (index === this.count) { // Last node
-        node.prev = this.tail;
-        this.tail.next = node;
+    const node = new DoublyNode(element);
+    if (index === 0) { // First node
+      if (this.head == null) {
+        this.head = node;
         this.tail = node;
       } else {
-        const previous = this.getElementAt(index - 1);
-        current = previous.next;
-        node.next = current;
-        previous.next = node;
-        current.prev = node;
-        node.prev = previous;
+        node.next = this.head;
+        this.head.prev = node;
+        this.head = node;
       }
-      this.count++;
-      return true;
+    } else if (index === this.count) { // Last node
+      node.prev = this.tail;
+      this.tail.next = node;
+      this.tail = node;
+    } else {
+      const previous = this.getElementAt(index - 1) as DoublyNode<T>;
+      const current = previous.next;
+
+      node.next = current;
+      previous.next = node;
+      current.prev = node;
+      node.prev = previous;
     }
-    return false;
+
+    this.count++;
+    return true;
   }
 
   removeAt(index: number): T {
-    if (index >= 0 && index < this.count) {
-      let current = this.head;
-
-      if (index === 0) { // First node
-        this.head = current.next;
-        if (this.count === 1) {
-          this.tail = undefined;
-        } else {
-          this.head.prev = undefined;
-        }
-      } else if (index === this.count - 1) { // Last item
-        current = this.tail;
-        this.tail = current.prev;
-        this.tail.next = undefined;
-      } else {
-        current = this.getElementAt(index);
-        const previous = current.prev;
-        previous.next = current.next;
-        current.next.prev = previous;
-      }
-      this.count--;
-      return current.element;
+    if (index < 0 || index >= this.count) {
+      return undefined
     }
-    return undefined;
+    let current = this.head;
+
+    if (index === 0) { // First node
+      this.head = current.next;
+      if (this.count === 1) {
+        this.tail = undefined;
+      } else {
+        this.head.prev = undefined;
+      }
+    } else if (index === this.count - 1) { // Last item
+      current = this.tail;
+      this.tail = current.prev;
+      this.tail.next = undefined;
+    } else {
+      current = this.getElementAt(index);
+      const previous = current.prev;
+      previous.next = current.next;
+      current.next.prev = previous;
+    }
+
+    this.count--;
+
+    return current.element;
   }
 
   clear(): void {

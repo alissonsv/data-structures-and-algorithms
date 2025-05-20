@@ -1,6 +1,6 @@
 import LinkedList from './linked-list';
 import { DoublyNode } from './models/linked-list-models';
-import { defaultEquals } from '../util';
+import { defaultEquals } from '../../util';
 
 export default class DoubleLinkedList<T> extends LinkedList<T> {
   protected head: DoublyNode<T>;

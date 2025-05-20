@@ -1,5 +1,5 @@
-import LinkedList from '../../src/data-structures/linked-list';
-import { Node } from '../../src/data-structures/models/linked-list-models';
+import LinkedList from '../../../src/data-structures/chapter6/linked-list';
+import { Node } from '../../../src/data-structures/chapter6/models/linked-list-models';
 
 describe('Linked List', () => {
   let list: LinkedList<number>;
@@ -104,14 +104,14 @@ describe('Linked List', () => {
       expect(list.indexOf(1)).toBe(0);
       expect(list.indexOf(2)).toBe(1);
       expect(list.indexOf(64)).toBe(-1);
-      expect(list.indexOf(null)).toBe(-1);
+      expect(list.indexOf(null as unknown as number)).toBe(-1);
     });
 
     it('get index out of range must return undefined', () => {
       list.push(1);
       expect(list.getElementAt(-1)).toBeUndefined();
       expect(list.getElementAt(2)).toBeUndefined();
-      expect(list.getElementAt(undefined)).toBeUndefined();
+      expect(list.getElementAt(undefined as unknown as number)).toBeUndefined();
     });
 
     it('get the node at head', () => {

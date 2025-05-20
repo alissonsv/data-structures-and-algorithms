@@ -1,4 +1,4 @@
-import StackLinkedList from '../../src/data-structures/stack-linked-list';
+import StackLinkedList from '../../../src/data-structures/chapter6/stack-linked-list';
 
 describe('Stack Linked List', () => {
   let list: StackLinkedList<number>;

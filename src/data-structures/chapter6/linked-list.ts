@@ -1,4 +1,4 @@
-import { defaultEquals } from '../util';
+import { defaultEquals } from '../../util';
 import { Node } from './models/linked-list-models';
 
 export default class LinkedList<T> {

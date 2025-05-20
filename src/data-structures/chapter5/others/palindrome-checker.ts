@@ -1,4 +1,4 @@
-import Deque from '../data-structures/deque';
+import Deque from '../deque';
 
 export default function palindromeChecker(aString: string) {
   if (aString === undefined || aString === null || (aString !== null && aString.length === 0)) {

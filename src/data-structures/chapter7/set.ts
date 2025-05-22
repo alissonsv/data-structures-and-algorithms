@@ -44,26 +44,24 @@ export default class Set<T> {
     return unionSet;
   }
 
-  intersection(otherSet: Set<T>): Set<T> {
-    const intersectionSet = new Set<T>();
-    const values = this.values();
-    const otherSetValues = otherSet.values();
-    let biggerSet = values;
-    let smallerSet = otherSetValues;
+intersection(otherSet: Set<T>): Set<T> {
+  const intersectionSet = new Set<T>();
 
-    if (otherSetValues.length >= values.length) {
-      biggerSet = otherSetValues;
-      smallerSet = values;
+  const thisValues = this.values();
+  const otherValues = otherSet.values();
+
+  const [smallerValues, biggerSet] = thisValues.length <= otherValues.length
+      ? [thisValues, otherSet]
+      : [otherValues, this];
+
+  smallerValues.forEach((value) => {
+    if (biggerSet.has(value)) {
+      intersectionSet.add(value);
     }
+  });
 
-    smallerSet.forEach((value) => {
-      if (biggerSet.includes(value)) {
-        intersectionSet.add(value);
-      }
-    });
-
-    return intersectionSet;
-  }
+  return intersectionSet;
+}
 
   difference(otherSet: Set<T>): Set<T> {
     const differenceSet = new Set<T>();

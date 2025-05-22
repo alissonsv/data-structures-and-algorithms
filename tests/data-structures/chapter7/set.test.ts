@@ -81,6 +81,21 @@ describe('Set', () => {
     expect(intersectionAB.values()).toStrictEqual([2, 3]);
   });
 
+  it('intersects bigger set with lower set', () => {
+    const setA = new Set();
+    setA.add(1);
+    setA.add(2);
+    setA.add(3);
+    setA.add(4);
+    const setB = new Set();
+    setB.add(2);
+    setB.add(3);
+    setB.add(4);
+
+    const intersectionAB = setA.intersection(setB);
+    expect(intersectionAB.values()).toStrictEqual([2, 3, 4]);
+  })
+
   it('difference between two sets', () => {
     const setA = new Set<number>();
     setA.add(1);
